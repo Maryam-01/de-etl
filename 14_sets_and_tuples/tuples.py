@@ -13,7 +13,7 @@ def create_tuple(arg_1, arg_2):
     This function takes two arguments and should return a tuple
         containing the arguments
     """
-    pass
+    return arg_1, arg_2
 
 
 @run_test
@@ -34,7 +34,7 @@ def tuple_to_list(my_tuple):
     """
     This function should convert the given tuple to a list
     """
-    pass
+    return list(my_tuple)
 
 
 @skip_test
@@ -55,7 +55,13 @@ def count_threes(my_tuple):
     This function should return the number of times the string "three" appears
         in the given tuple
     """
-    pass
+    threes = 0
+    for num in my_tuple:
+        if num == 'three':
+            threes += 1
+    return threes
+
+    
 
 
 @skip_test
@@ -76,7 +82,13 @@ def get_index_of_five(my_tuple):
     """
     This function takes a tuple and should return the index of the number 5
     """
-    pass
+    for i in len(range(my_tuple)):
+        if my_tuple[i] == 5:
+            return i
+        
+    for index, value in enumerate(my_tuple):
+        if value == 5:
+            return index
 
 
 @skip_test
@@ -95,7 +107,10 @@ def get_second_to_last_element(my_tuple):
     """
     This function takes a tuple and should return the 2nd to last element
     """
-    pass
+    return my_tuple[-2]
+
+
+    
 
 
 @skip_test
@@ -119,7 +134,7 @@ def get_last_three_elements(my_tuple):
     """
     This function should return the final 3 elements of the given tuple
     """
-    pass
+    return my_tuple[-3:]
 
 
 @skip_test
@@ -150,7 +165,13 @@ def check_element_is_present(my_tuple, element):
     True - if the element is present in the tuple
     False - if the element is NOT present in the tuple
     """
-    pass
+    for i in range(len(my_tuple)):
+        if i == element:
+            return True
+        else:
+            return False
+        
+    return element in my_tuple
 
 
 @skip_test
@@ -189,7 +210,7 @@ def tuple_switcheroo(*args):
 
     E.g: tuple_switcheroo(1,2,3) should return (3,2,1)
     """
-    pass
+    return args[::-1]
 
 
 @skip_test

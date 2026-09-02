@@ -34,6 +34,8 @@ def create_greeting_strings(names):
 
     return greeting
 
+    greeting = [(f"Hello {name}!") for name in names]
+
 
 @run_test
 def test_create_greeting_strings_return_empty_list():
@@ -81,7 +83,9 @@ There is no existing code for you to refactor, instead you should solve `increme
 """
 
 def increment_even_numbers(number_list):
-    pass
+    even_numbers = [num + 1 num for number_list in nums if num % 2 == 0 else]
+
+    even_numbers = [num + 1 if num % 2 == 0 else num + 0 for num in number_list]
 
 
 @skip_test
@@ -140,6 +144,10 @@ def switch_name_and_id(data):
         switched_data[record[1]] = record[0]
 
     return switched_data
+
+    switched_data = {record[1]: record[0] for record in data.items()}
+
+
 
 
 @skip_test
@@ -235,7 +243,7 @@ There is no existing code for you to refactor. Instead, you should solve `find_a
 """
 
 def find_average_games(games):
-    pass
+    new_dictionary = {game:score for game, score in games if score < 75 and score > 25}
 
 
 @skip_test
@@ -364,6 +372,10 @@ def get_unique_departments(employees):
             unique_departments.append(employee["department"])
 
     return unique_departments
+
+    new_set = {employee['department'] for employee in employees }
+
+
 
 
 @run_test

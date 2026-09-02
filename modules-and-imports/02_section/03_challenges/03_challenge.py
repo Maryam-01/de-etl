@@ -1,6 +1,7 @@
 # ADD YOUR IMPORTS HERE
 
-
+import matplotlib.pyplot as pyplot
+import numpy
 # PLEASE DO NOT MAKE CHANGES BELOW THIS LINE
 
 fig = pyplot.figure(figsize=(8, 8))

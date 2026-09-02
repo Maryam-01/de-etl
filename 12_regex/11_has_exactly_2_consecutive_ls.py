@@ -26,7 +26,8 @@ def has_exactly_2_consecutive_ls(text):
 
     You should return True if this is the case, and False otherwise
     """
-    pass
+    numbers = re.findall(r'\l+', text)
+    return bool(int(text) for num in numbers)
 
 
 @run_test

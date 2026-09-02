@@ -3,4 +3,7 @@
 
 # It should look something like "Good afternoon Simon Jackson!"
 
-print(greeting)
+
+from data.file_1 import mentor_first_name
+from data.file_2 import mentor_last_name
+print (f"Good Afternoon {mentor_first_name} {mentor_last_name}!")

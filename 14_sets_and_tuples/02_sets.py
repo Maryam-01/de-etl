@@ -16,7 +16,10 @@ def check_common_values(set_1, set_2):
     - If they DON'T share any common elements then the function should return
         False
     """
-    pass
+    return bool(set_1.intersection(set_2))
+
+
+
 
 
 @run_test
@@ -40,7 +43,8 @@ def check_subset(set_1, set_2):
     E.g.
     {3,4} is a *subset* of {1,2,3,4,5}
     """
-    pass
+    return bool(set_2.issubset(set_1))
+    
 
 
 @skip_test
@@ -63,7 +67,7 @@ def check_superset(set_1, set_2):
     E.g.
     {1,2,3,4,5} is a *superset* of {3,4}
     """
-    pass
+    return bool(set_2.issuperset(set_1))
 
 
 @skip_test
@@ -86,7 +90,7 @@ def find_set_differences(set_1, set_2):
     It should return a set containing all the elements of set_1 that aren't
     in set_2 AND all the elements of set_2 that aren't in set_1.
     """
-    pass
+    return set_1.symmetric_difference(set_2)
 
 
 @skip_test
@@ -116,7 +120,7 @@ def create_union(set_1, set_2):
     This function should create a *union* of set_1 and set_2. A union will
     have all the values of both sets. There will be no duplicates.
     """
-    pass
+    return set_1.union(set_2)
 
 
 @skip_test
@@ -147,7 +151,7 @@ def create_intersection(set_1, set_2):
     This function should create an *intersection* of set_1 and set_2. An
     intersection will contain all the values that are present in BOTH sets.
     """
-    pass
+    return set_1.intersection(set_2)
 
 
 @skip_test

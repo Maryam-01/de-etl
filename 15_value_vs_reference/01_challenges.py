@@ -10,18 +10,18 @@ from test_api.checks import run_test, skip_test
 def true_or_false_1():
     string_1 = 'hello'
     string_2 = 'hello'
-    assert (string_1 == string_2) == FILL_ME_IN
+    assert (string_1 == string_2) == true_or_false_1
 
 @skip_test
 def true_or_false_2():
     ones = [1, 1]
-    assert (ones[0] == ones[1]) == FILL_ME_IN
+    assert (ones[0] == ones[1]) == True
 
 @skip_test
 def true_or_false_3():
     variable = "data"
     variable_2 = variable
-    assert (variable == variable_2) == FILL_ME_IN
+    assert (variable == variable_2) == False
 
 
 # DO NOT CHANGE CODE BELOW THIS LINE

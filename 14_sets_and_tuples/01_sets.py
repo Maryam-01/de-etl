@@ -12,7 +12,7 @@ def create_set(numbers):
     """
     This function should take a list of numbers and convert it to a set
     """
-    pass
+    return set(numbers)
 
 
 @run_test
@@ -36,7 +36,11 @@ def is_in_set(my_set, element):
     This function should take a set and an element and return True if the set
     contains the element and False otherwise
     """
-    pass
+   
+    for num in my_set:
+        if num == element:
+            return True
+    return False
 
 
 @skip_test
@@ -54,7 +58,10 @@ def remove_set_element(my_set):
     This function should take a set, remove any one element from it and return
     the removed element
     """
-    pass
+    
+    return my_set.remove.pop()
+    
+
 
 
 @skip_test
@@ -76,7 +83,8 @@ def discard_set_element(my_set, value):
     This function should take a set and a value. It should remove the
     specified value from the set and return the original set.
     """
-    pass
+    my_set.discard(value)
+    return my_set
 
 
 @skip_test
@@ -97,7 +105,8 @@ def copy_set(my_set):
     """
     This function should take a set and return a *new copy* of that set
     """
-    pass
+    return my_set.copy()
+    
 
 
 @skip_test

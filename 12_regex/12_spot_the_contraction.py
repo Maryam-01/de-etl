@@ -33,7 +33,8 @@ def spot_the_contraction(text):
     - "Sometimes I don't like to get up early" True
     - "Don't feed the birds" True
     """
-    pass
+    result = re.search(r"I'm|I've|Don't", text, re.IGNORECASE)
+    return bool(result)
 
 
 @run_test

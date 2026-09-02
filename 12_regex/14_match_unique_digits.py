@@ -26,8 +26,11 @@ def match_unique_digits(text):
     - 493710 True
     - 00 False
     """
-    pass
+    
+    digits = re.findall(r'\d', text)
+    counts = Counter(digits)
 
+    unique_once = [d for d in counts if counts[d] == 1]
 
 @run_test
 def test_match_unique_digits_returns_true_when_number_contains_unique_digits():

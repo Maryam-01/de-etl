@@ -30,8 +30,7 @@ def exclude_words(text):
     - "I study at Northcoders." should be "I study at Northcoders."
     - "IBM hired a lot of coders." should be "IBM hired a lot of ."
     """
-    pass
-
+    re.sub(r'\bNorth\b|\bcoders\b', "", text, re.IGNORECASE)
 
 @run_test
 def test_exclude_words_excludes_separate_words_only():

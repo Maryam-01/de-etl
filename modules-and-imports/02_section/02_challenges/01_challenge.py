@@ -1,5 +1,11 @@
 # ADD YOUR IMPORTS HERE
-
+import sys
+import os
+import math
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+)
+from examples.file_3 import number_list
 
 # PLEASE DO NOT MAKE CHANGES BELOW THIS LINE
 
