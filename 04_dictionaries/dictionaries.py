@@ -122,14 +122,14 @@ def add_attribute_to_product(product, key, value):
 
 
 # ❗ Remember to change @skip_test to @run_test!
-@skip_test
+@run_test
 def add_attribute_to_product_should_add_single_attribute_to_empty_product():
     result = add_attribute_to_product({}, "length", "2h 36m")
     expected = {"length": "2h 36m"}
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def add_attribute_to_product_should_add_string_attribute_to_product():
     product = {"type": "Terminator 2: Judgement Day", "price": "£6.99", "quantity": 1}
     result = add_attribute_to_product(product, "length", "2h 36m")
@@ -142,7 +142,7 @@ def add_attribute_to_product_should_add_string_attribute_to_product():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def add_attribute_to_product_should_add_integer_attribute_to_product():
     product = {"type": "Terminator 2: Judgement Day", "price": "£6.99", "quantity": 1}
     result = add_attribute_to_product(product, 36, 42)
@@ -155,7 +155,7 @@ def add_attribute_to_product_should_add_integer_attribute_to_product():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def add_attribute_to_product_should_add_float_attribute_to_product():
     product = {"type": "Terminator 2: Judgement Day", "price": "£6.99", "quantity": 1}
     result = add_attribute_to_product(product, 36.1, "dave")
@@ -168,7 +168,7 @@ def add_attribute_to_product_should_add_float_attribute_to_product():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def add_attribute_to_product_should_add_boolean_attribute_to_product():
     product = {"type": "Terminator 2: Judgement Day", "price": "£6.99", "quantity": 1}
     result = add_attribute_to_product(product, True, False)
@@ -181,7 +181,7 @@ def add_attribute_to_product_should_add_boolean_attribute_to_product():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def add_attribute_to_product_should_not_add_list_attribute_to_product():
     product = {"type": "Terminator 2: Judgement Day", "price": "£6.99", "quantity": 1}
     result = add_attribute_to_product(product, [1, 2, 3], "a")
@@ -189,7 +189,7 @@ def add_attribute_to_product_should_not_add_list_attribute_to_product():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def add_attribute_to_product_should_not_add_dictionary_attribute_to_product():
     product = {"type": "Terminator 2: Judgement Day", "price": "£6.99", "quantity": 1}
     result = add_attribute_to_product(product, {"a": "b"}, "a")
@@ -197,7 +197,7 @@ def add_attribute_to_product_should_not_add_dictionary_attribute_to_product():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def add_attribute_to_product_should_return_the_original_product_dictionary():
     product = {"type": "Terminator 2: Judgement Day", "price": "£6.99", "quantity": 1}
     result = add_attribute_to_product(product, "length", "2h 36m")
@@ -230,6 +230,40 @@ returns
 """
 
 
+
+def create_northcoder(name, year_of_birth):
+    if year_of_birth > 2023:
+        age = "error"
+    else:
+        age = 2023 - year_of_birth
+    language = 'Python'
+    result= {
+
+        "name": name,
+        "age": age,
+        "language": language,
+
+    }
+
+    return result
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def create_northcoder(name, year_of_birth):
     if year_of_birth > 2023:
         age = "error"
@@ -249,7 +283,7 @@ def create_northcoder(name, year_of_birth):
     return result
 
 
-@skip_test
+@run_test
 def create_northcoder_should_create_northcoder_with_correct_age():
     result = create_northcoder("Joe", 2002)
 
@@ -258,14 +292,14 @@ def create_northcoder_should_create_northcoder_with_correct_age():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def create_northcoder_should_add_age_as_0_for_birth_year_2023():
     result = create_northcoder("Paul", 2023)
     expected = {"name": "Paul", "age": 0, "language": "Python"}
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def create_northcoder_should_show_age_error_if_birth_year_is_after_2023():
     result = create_northcoder("Zarkon", 2123)
     expected = {"name": "Zarkon", "age": "error", "language": "Python"}
