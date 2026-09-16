@@ -231,37 +231,6 @@ returns
 
 
 
-def create_northcoder(name, year_of_birth):
-    if year_of_birth > 2023:
-        age = "error"
-    else:
-        age = 2023 - year_of_birth
-    language = 'Python'
-    result= {
-
-        "name": name,
-        "age": age,
-        "language": language,
-
-    }
-
-    return result
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def create_northcoder(name, year_of_birth):
@@ -335,19 +304,15 @@ Returns
 
 def delete_many_passwords(users):
     for user in users:
-        if "password" in user:
-            del user["password"]
-    return users
-
-
-def delete_many_passwords(users):
-    for user in users:
-        user.pop("password", None)
+        if 'password' in user:
+            del user ['password']
     return users
 
 
 
-@skip_test
+
+
+@run_test
 def delete_many_passwords_should_change_single_password():
     result = delete_many_passwords(
         [{"name": "Barry", "password": "ilovetea", "department": "Tea"}]
@@ -356,14 +321,14 @@ def delete_many_passwords_should_change_single_password():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def delete_many_passwords_should_not_change_user_without_password():
     result = delete_many_passwords([{"name": "Sandeep", "favourite_drink": "Coffee"}])
     expected = [{"name": "Sandeep", "favourite_drink": "Coffee"}]
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def delete_many_passwords_should_change_many_users():
     result = delete_many_passwords(
         [
@@ -380,7 +345,7 @@ def delete_many_passwords_should_change_many_users():
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def delete_many_passwords_should_change_many_users_when_some_do_not_have_passwords():
     result = delete_many_passwords(
         [
@@ -397,7 +362,7 @@ def delete_many_passwords_should_change_many_users_when_some_do_not_have_passwor
     assert result == expected, format_err_msg(expected, result)
 
 
-@skip_test
+@run_test
 def delete_many_passwords_should_return_empty_list_when_no_users_present():
     result = delete_many_passwords([])
     expected = []
